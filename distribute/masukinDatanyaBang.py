@@ -2,7 +2,7 @@ import pandas as pd
 from openpyxl import load_workbook
 
 def merge_data(input_files, output_file, template_file):
-    # Load the template file
+    # Load the template fil
     template = load_workbook(template_file)
 
     for input_file in input_files:
@@ -31,7 +31,13 @@ def merge_data(input_files, output_file, template_file):
     print(f"Merged data saved to: {output_file}")
 
 # Usage
-input_files = ["anton_1.xlsx", "anton_2.xlsx", "budi_1.xlsx", "budi_2.xlsx"]
+input_files = [
+"1_1.xlsx", "1_2.xlsx", "2_1.xlsx", "2_2.xlsx", "3_1.xlsx", "3_2.xlsx", "4_1.xlsx", "4_2.xlsx", "5_1.xlsx", "5_2.xlsx",
+"6_1.xlsx", "6_2.xlsx", "7_1.xlsx", "7_2.xlsx", "8_1.xlsx", "8_2.xlsx", "9_1.xlsx", "9_2.xlsx", "10_1.xlsx", "10_2.xlsx",
+"11_1.xlsx", "11_2.xlsx", "12_1.xlsx", "12_2.xlsx", "13_1.xlsx", "13_2.xlsx", "14_1.xlsx", "14_2.xlsx", "15_1.xlsx",
+"15_2.xlsx", "16_1.xlsx", "16_2.xlsx", "17_1.xlsx", "17_2.xlsx", "18_1.xlsx", "18_2.xlsx", "19_1.xlsx"
+]
+
 output_file = "merged_data.xlsx"
 template_file = "templateabsen.xlsx"
 
