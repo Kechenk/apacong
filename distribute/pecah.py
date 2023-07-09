@@ -9,12 +9,12 @@ from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 
 scopes = ["https://www.googleapis.com/auth/spreadsheets"]
-spreadsheet_id = "1f2aopAPm8E3IFPYUhmMEaH_dBPGIhSO_"
+spreadsheet_id = "1eXDnzC-yarKhS-n4SPpaqMSNU3C7FVtU"
 
-def update_master_sheet():
-    # Load the MASTER sheet
-    wb = load_workbook('Absensi Komunitas 07-08.xlsx')
-    master_sheet = wb['MASTER']
+#def # update_master_sheet():
+    ## Load the MASTER sheet
+    #wb = load_workbook('test data.xlsx')
+    #master_sheet = wb['MASTER']
 
     # Iterate through the sheets and update the MASTER sheet formulas
     for sheet_number in range(1, 37):
@@ -36,7 +36,7 @@ def update_master_sheet():
                     cell.value = formula
 
     # Save the updated workbook
-    wb.save('Absensi Komunitas 07-08.xlsx')
+    wb.save('test data.xlsx')
     print("MASTER sheet formulas updated.")
 
 def main():
@@ -56,7 +56,7 @@ def main():
     sheet = service.spreadsheets()
 
     # Update the MASTER sheet
-    update_master_sheet()
+    # update_master_sheet()
 
     # Perform other spreadsheet operations using the 'sheet' object
 
