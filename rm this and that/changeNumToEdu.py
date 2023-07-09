@@ -10,8 +10,8 @@ category_dict = {
     12: "S3"
 }
 
-input_file = "cekulah.txt"  # Path to the input text file with numbers
-output_file = "sekolah.txt"  # Path to the output text file to save category labels
+input_file = "./input/cekulah.txt"  # Path to the input text file with numbers
+output_file = "./output/sekolah.txt"  # Path to the output text file to save category labels
 
 with open(input_file, "r") as file:
     numbers = [int(line.strip()) for line in file.readlines()]
