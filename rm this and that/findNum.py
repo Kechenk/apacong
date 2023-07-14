@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 input_filename = 'num.txt'
-output_filename = 'numPross.txt'
+output_filename = 'output.txt'
 duplicates = defaultdict(list)
 
 with open(input_filename, 'r') as input_file:
