@@ -8,7 +8,7 @@ mv roots && keep data as folder
 .pkl data is for machine learning in .py
 ## KMNFO
 
-![App Screenshot](https://www.its.ac.id/wp-content/uploads/2021/10/logo-kominfo-transparent.png)
+![App Screenshot](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Logo_of_Ministry_of_Communication_and_Information_Technology_of_the_Republic_of_Indonesia.svg/241px-Logo_of_Ministry_of_Communication_and_Information_Technology_of_the_Republic_of_Indonesia.svg.png)
 
 
 
