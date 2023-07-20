@@ -3,13 +3,13 @@ import pandas as pd
 def split_data(input_file):
     df = pd.read_excel(input_file, header=None)
 
-    start_row = 9189  # Row index to start chunking (indexing starts from 0)
+    start_row = 9  # Row index to start chunking (indexing starts from 0)
     start_col = 1  # Column index to start chunking (indexing starts from 0)
 
     chunk_size = 250
     rows, cols = df.shape
 
-    names = [str(i) for i in range(1, 20)]
+    names = [str(i) for i in range(1, 14)]
 
     max_files_per_name = 1  # Maximum number of files per name
     file_counter = {name: 1 for name in names}  # Initialize file_counter dictionary
@@ -54,4 +54,4 @@ def split_data(input_file):
                 start_row = rows
 
 # Usage
-split_data("./Template/50k_FIX.xlsx")
+split_data("./Template/template.xlsx")

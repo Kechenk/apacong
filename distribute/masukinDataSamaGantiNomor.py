@@ -24,16 +24,20 @@ def merge_data(input_files, output_file, template_file):
 
         for r, row in enumerate(data_range):
             for c, value in enumerate(row):
-                sheet.cell(row=start_cell.row + r, column=start_cell.column + c).value = value
+                if c == 8:  # Column J
+                    formatted_value = f"{value:010}"  # Format the value with 10 digits
+                    if int(value) > 8:
+                        formatted_value = f"0{formatted_value}"  # Add '0' in front if value < 10
+                    sheet.cell(row=start_cell.row + r, column=start_cell.column + c).value = formatted_value
+                else:
+                    sheet.cell(row=start_cell.row + r, column=start_cell.column + c).value = value
 
     template.save(output_file)
     print(f"Merged data saved to: {output_file}")
 
 # Penggunaan
-input_files = [f"{i}_1.xlsx" for i in range(1, 38)]
-
-
-output_file = "MATENGS.xlsx"
+input_files = [f"{i}_1.xlsx" for i in range(1, 14)]
+output_file = "MANTAP.xlsx"
 template_file = "./Template/templateabsen.xlsx"
 
 merge_data(input_files, output_file, template_file)
