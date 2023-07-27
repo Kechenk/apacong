@@ -30,10 +30,10 @@ def merge_data(input_files, output_file, template_file):
     print(f"Merged data saved to: {output_file}")
 
 # Penggunaan
-input_files = [f"{i}_1.xlsx" for i in range(1, 38)]
+input_files = [f"{i}_1.xlsx" for i in range(1, 14)]
 
 
-output_file = "MATENGS.xlsx"
+output_file = "NTAPS.xlsx"
 template_file = "./Template/templateabsen.xlsx"
 
 merge_data(input_files, output_file, template_file)

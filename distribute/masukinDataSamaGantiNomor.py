@@ -25,8 +25,8 @@ def merge_data(input_files, output_file, template_file):
         for r, row in enumerate(data_range):
             for c, value in enumerate(row):
                 if c == 8:  # Column J
-                    formatted_value = f"{value:010}"  # Format the value with 10 digits
-                    if int(value) > 8:
+                    formatted_value = f"{value:008}"  # Format the value with 10 digits
+                    if int(value) > 7:
                         formatted_value = f"0{formatted_value}"  # Add '0' in front if value < 10
                     sheet.cell(row=start_cell.row + r, column=start_cell.column + c).value = formatted_value
                 else:

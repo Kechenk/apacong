@@ -1,12 +1,15 @@
-file_path = "mail.txt"
-output_file_path = "modified_mail.txt"
+def remove_sobatlama(input_file, output_file):
+    with open(input_file, 'r') as file:
+        lines = file.readlines()
 
-with open(file_path, "r") as file:
-    lines = file.readlines()
+    processed_lines = [line.replace('@heysobat.com', '') for line in lines]
 
-modified_lines = [line.strip() + "@anu.com" for line in lines]
+    with open(output_file, 'w') as file:
+        file.writelines(processed_lines)
 
-with open(output_file_path, "w") as output_file:
-    output_file.write("\n".join(modified_lines))
+    print(f"Processed file saved to: {output_file}")
 
-print("Emails modified and saved to 'modified_mail.txt'")
+# Usage
+input_file = 'mail.txt'
+output_file = 'mail_clean.txt'
+remove_sobatlama(input_file, output_file)

@@ -1,13 +1,27 @@
-import os.path
+import openpyxl
 
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
+def main(input_file, output_file):
+	wb = openpyxl.load_workbook(input_file)
+	master = wb.create_sheet("MASTER")
 
-import pandas as pd
-from openpyxl import load_workbook
-from openpyxl.utils	import get_column_letter
+	for sheet_name in wb.sheetnames:
+		if sheet_name == "MASTER":
+			continue
 
-scopes = ["https://www.googleapis.com/"]
+		sheet = wb[sheet_name]
+
+		for row in range(10, 260):
+
+			value = sheet.cell(row=row, column=2).value
+
+			fill = sheet.cell(row=row, column=2).fill
+
+			master_cell = master_sheet.cell(row=row, column=2)
+			master_cell.value = value
+			master_cell.fill = fill
+
+		wb.save(output_file)
+
+input_file = 'markicobs.xlsx'
+output_file = 'udah.xlsx'
+main(input_file, output_file)
